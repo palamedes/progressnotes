@@ -5,7 +5,7 @@ class Client < ApplicationRecord
   has_many :progress_notes
   has_many :attempts
 
-  has_many :words, through: :attempts, source: :vocabulary
+  has_many :words, -> { distinct }, through: :attempts, source: :vocabulary
 
   # Validations
   validates :name, presence: true
