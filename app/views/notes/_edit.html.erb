@@ -1,0 +1,81 @@
+<div class="ui padded container">
+
+  <div class="ui raised padded segment">
+    <div class="ui two column grid">
+      <div class="three wide column">
+        <img src="/helen.jpg" style="width: 100%;" class="ui left floated">
+
+      </div>
+      <div class="thirteen wide column">
+        <h3><%= @client.name %></h3>
+
+        <div class="ui placeholder">
+          <div class="paragraph">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="ui two column grid">
+    <div class="four wide column">
+
+      <div class="ui divided list">
+        <% @notes.each do |note| %>
+          <div class="item">
+            <i class="sticky note outline icon"></i>
+            <div class="content">
+              <a href="<%= edit_note_path @therapist, @client, note %>"><%= note.title %></a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="twelve wide column">
+      <div class="ui top attached segment">
+
+        <div class="ui form">
+          <div class="field">
+            <label>Title</label>
+            <input type="text" name="title" placeholder="Title" value="<%= @note.title %>">
+          </div>
+          <div class="field">
+            <label>Progress Node</label>
+            <textarea rows="16"><%= @note.note %></textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="ui bottom attached tabular menu">
+        <a class="active item">
+          Note
+        </a>
+        <a class="item">
+          Details
+        </a>
+        <a class="item">
+          Special Report
+        </a>
+        <a class="item">
+          Audit Log
+        </a>
+
+        <div class="right menu">
+          <a class="item">
+
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
