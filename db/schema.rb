@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_214126) do
+ActiveRecord::Schema.define(version: 2020_10_07_204031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attempts", force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.bigint "vocabulary_id", null: false
+    t.boolean "successful", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_attempts_on_client_id"
+    t.index ["vocabulary_id"], name: "index_attempts_on_vocabulary_id"
+  end
 
   create_table "clients", force: :cascade do |t|
     t.bigint "therapist_id", null: false
@@ -36,6 +46,12 @@ ActiveRecord::Schema.define(version: 2020_10_06_214126) do
 
   create_table "therapists", force: :cascade do |t|
     t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "vocabularies", force: :cascade do |t|
+    t.string "word", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
