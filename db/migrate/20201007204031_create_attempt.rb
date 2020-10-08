@@ -3,8 +3,10 @@ class CreateAttempt < ActiveRecord::Migration[6.0]
     create_table :attempts do |t|
 
       t.references :client, null: false
-      t.references :vocabulary, null: false
+      t.references :progress_note, null: false
+      t.references :vocabulary
 
+      t.integer :note_index, null: false
       t.boolean :successful, default: false
 
       t.timestamps

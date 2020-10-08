@@ -17,11 +17,14 @@ ActiveRecord::Schema.define(version: 2020_10_07_204031) do
 
   create_table "attempts", force: :cascade do |t|
     t.bigint "client_id", null: false
-    t.bigint "vocabulary_id", null: false
+    t.bigint "progress_note_id", null: false
+    t.bigint "vocabulary_id"
+    t.integer "note_index", null: false
     t.boolean "successful", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["client_id"], name: "index_attempts_on_client_id"
+    t.index ["progress_note_id"], name: "index_attempts_on_progress_note_id"
     t.index ["vocabulary_id"], name: "index_attempts_on_vocabulary_id"
   end
 
