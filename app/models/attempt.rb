@@ -1,7 +1,7 @@
 class Attempt < ApplicationRecord
 
   # Relationships
-  belongs_to :vocabulary
+  belongs_to :vocabulary, optional: true
   belongs_to :client
   belongs_to :progress_note
 
