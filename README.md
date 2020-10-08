@@ -6,6 +6,9 @@ Code Challenge / Proof of concept
 
 `rails db:reset db:seed` to get a fresh rebuild once already installed.
 
+Use the database.yml.dist as your database.yml (My habit is to not commit that..)
+
+
 See MOCKUP: 
 
 ![Mockup](https://github.com/palamedes/progressnotes/public/progressnotemock.png)
