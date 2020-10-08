@@ -30,7 +30,7 @@
       <div class="ui divided list">
         <% @notes.each do |note| %>
           <div class="item">
-            <i class="sticky note outline icon"></i>
+            <i class="sticky note <%= 'outline' unless params[:id].to_i == note.id %> icon"></i>
             <div class="content">
               <a href="<%= edit_note_path @therapist, @client, note %>"><%= note.title %></a>
             </div>
