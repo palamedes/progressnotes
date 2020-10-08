@@ -1,24 +1,13 @@
-# README
+# Progress Notes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Code Challenge / Proof of concept
 
-Things you may want to cover:
+`rails db:seed` to get the initial data once you have everything installed and migrated.
 
-* Ruby version
+`rails db:reset db:seed` to get a fresh rebuild once already installed.
 
-* System dependencies
+See MOCKUP: 
 
-* Configuration
+![Mockup](https://github.com/palamedes/progressnotes/public/progressnotemock.png)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This will come down to a rules engine eventually to do the bulk of the work.  Have me talk to this.
