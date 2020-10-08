@@ -40,7 +40,8 @@
 
     </div>
     <div class="twelve wide column">
-      <div class="ui top attached segment">
+
+      <div class="ui top attached active tab segment" data-tab="note">
 
         <div class="ui form">
           <div class="field">
@@ -54,17 +55,40 @@
         </div>
 
       </div>
+
+      <div class="ui top attached tab segment" data-tab="details">
+        <p>From here we can dig out all manner of data once we have the attempts and vocabulary system working.  This doesn't even touch yet on the word position information or the goal aspect of things.</p>
+
+        <p> Once we get enough info we can start to parse individual words to determine word position issues based on word patterns and even identify phoneme's the client is having issues with. (IWP, MWP, FWP, AWP..etc..)</p>
+
+        <h4>Details:</h4>
+        <%= @note.attempts.count %> attempts were made with <%= @note.attempts.where(successful:true).count %> successful attempts.
+
+        <h5>Client had issues with the following words: </h5>
+
+          <%= @note.attempts.where(successful:false).where.not(vocabulary:nil).map(&:vocabulary).uniq.map(&:word).join(', ') %>
+
+        </div>
+
+      <div class="ui top attached tab segment" data-tab="report">
+        Special Report
+      </div>
+
+      <div class="ui top attached tab segment" data-tab="audit">
+        Audit Log
+      </div>
+
       <div class="ui bottom attached tabular menu">
-        <a class="active item">
+        <a class="active tab item" data-tab="note">
           Note
         </a>
-        <a class="item">
+        <a class="tab item" data-tab="details">
           Details
         </a>
-        <a class="item">
+        <a class="tab item" data-tab="report">
           Special Report
         </a>
-        <a class="item">
+        <a class="tab item" data-tab="audit">
           Audit Log
         </a>
 
