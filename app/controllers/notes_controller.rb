@@ -7,6 +7,7 @@ class NotesController < ActionController::Base
   # [GET] /
   # Default URL for notes
   def index
+    @note = ProgressNote.new
   end
 
   # [GET] /edit
